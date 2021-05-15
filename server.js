@@ -31,7 +31,7 @@ app.use(passport.session());
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/proj3");
+mongoose.connect(process.env.MONGODB_URI);
 
 //console log db connection for debugging
 mongoose.connection.on('error', (e) => console.error(`connection error: ${e.message}`));
