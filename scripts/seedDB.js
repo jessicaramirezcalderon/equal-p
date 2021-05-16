@@ -12,6 +12,26 @@ mongoose.connect(
   }
 );
 
+
+const companySeed = [
+  {
+    title: "Company One",
+    location: "France"
+  },
+  {
+    title: "Company Two",
+    location: "Italy"
+  },
+  {
+    title: "Company Three",
+    location: "Japan"
+  }
+];
+
+
+
+
+
 const bookSeed = [
   {
     title: "The Dead Zone",
@@ -127,6 +147,21 @@ const bookSeed = [
   }
 ];
 
+
+db.Company
+  .deleteMany({})
+  .then(() => db.Company.collection.insertMany(companySeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+
+  
 db.Book
   .deleteMany({})
   .then(() => db.Book.collection.insertMany(bookSeed))

@@ -1,13 +1,16 @@
 import React, {useState} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import UserContext from "./utils/UserContext";
+import Nav from "./components/Nav";
+//Pages
 import Books from "./pages/Books";
+import Companies from "./pages/Companies";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
 import Login from "./pages/Login";
-import UserContext from "./utils/UserContext";
 import SignUp from "./pages/SignUp";
 import Logout from "./pages/Logout";
+
 
 function App() {
   const [email, setEmail] = useState("");
@@ -23,6 +26,12 @@ function App() {
             </Route>
             <Route exact path="/books/:bookid">
               <Detail />
+            </Route>
+            <Route exact path="/companies">
+              <Companies />
+            </Route>
+            <Route exact path="/companies/:companyid">
+            <Companies />
             </Route>
             <Route exact path="/login">
               <Login />
