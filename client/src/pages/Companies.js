@@ -5,23 +5,22 @@ import finnAPI from "../utils/finnhubAPI";
 
 // import { Link } from "react-router-dom";
 //Components
-// import DeleteBtn from "../components/DeleteBtn";
+
 import Jumbotron from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
-// import { List, ListItem, Description } from "../components/List";
 import { Input, FormBtn } from "../components/Form";
-// import DeleteBtn from "../components/DeleteBtn";
+
 
 function Companies() {
   // Setting our component's initial state
   // const [results, setResults] = useState([])
-  const [/*companies*/, setCompanies] = useState([])
+  const [/*companies,*/ setCompanies] = useState([])
   const [formObject, setFormObject] = useState({})
 
   // Load all companies and store them with setCompany
   useEffect(() => {
     loadCompanies()
-  }, [])
+  });
 
   // Loads all companies and sets them to companies
   function loadCompanies() {

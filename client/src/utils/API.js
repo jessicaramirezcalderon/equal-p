@@ -1,51 +1,43 @@
 import axios from "axios";
 
 export default {
-  // Gets all books
-  getBooks: function () {
-    return axios.get("/api/books");
-  },
-  // Gets the book with the given id
-  getBook: function (id) {
-    return axios.get("/api/books/" + id);
-  },
-  // Deletes the book with the given id
-  deleteBook: function (id) {
-    return axios.delete("/api/books/" + id);
-  },
-  // Saves a book to the database
-  saveBook: function (bookData) {
-    return axios.post("/api/books", bookData);
-  },
   testUserRouter: function () {
-    return axios.get("/api/user/test");
+    return axios.get(`${process.env.REACT_APP_API_URL}/api/users/test`);
+    
   },
   login: function (userData) {
-    return axios.post("/api/user/login", userData);
+    return axios.post(`${process.env.REACT_APP_API_URL}/api/users/login`, userData);
   },
   logout: function () {
-    return axios.get("/api/user/logout");
+    return axios.get(`${process.env.REACT_APP_API_URL}/api/users/logout`);
   },
   signup: function (userData) {
-    return axios.post("/api/user/signup", userData);
+    return axios.post(`${process.env.REACT_APP_API_URL}/api/users/signup`, userData);
   },
   getUser: function () {
-    return axios.get("/api/user/data");
+    return axios.get(`${process.env.REACT_APP_API_URL}/api/users/data`);
   },
+
   // Gets all companies
   getCompanies: function () {
-    return axios.get("/api/companies");
+    return axios.get(`${process.env.REACT_APP_API_URL}/api/companies`);
+  },
+  getRatings: function () {
+    return axios.get(`${process.env.REACT_APP_API_URL}/api/reviews`);
+  },
+  saveRating: function (ratingData) {
+    return axios.post(`${process.env.REACT_APP_API_URL}/api/reviews`, ratingData);
   },
   // Gets the company with the given id
-  getCompany: function (id) {
-    return axios.get("/api/companies/" + id);
+  getCompanyProfile: function (id) {
+    return axios.get(`${process.env.REACT_APP_API_URL}/api/companies/` + id);
   },
   // Deletes the company with the given id
   deleteCompany: function (id) {
-    return axios.delete("/api/companies/" + id);
+    return axios.delete(`${process.env.REACT_APP_API_URL}/api/companies/` + id);
   },
   // Saves a company to the database
   saveCompany: function (companyData) {
-    return axios.post("/api/companies", companyData);
+    return axios.post(`${process.env.REACT_APP_API_URL}/api/companies`, companyData);
   }
 };

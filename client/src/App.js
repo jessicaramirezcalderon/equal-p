@@ -1,11 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import UserContext from "./utils/UserContext";
 import Nav from "./components/Nav";
 //Pages
-import Books from "./pages/Books";
+import Home from "./pages/Home";
 import Companies from "./pages/Companies";
-import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
@@ -17,21 +16,18 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   return (
     <Router>
-      <UserContext.Provider value={{email, setEmail, loggedIn, setLoggedIn}}>
+      <UserContext.Provider value={{ email, setEmail, loggedIn, setLoggedIn }}>
         <div>
           <Nav />
           <Switch>
-            <Route exact path={["/", "/books"]}>
-              <Books />
-            </Route>
-            <Route exact path="/books/:bookid">
-              <Detail />
+            <Route exact path="/">
+              <Home />
             </Route>
             <Route exact path="/companies">
               <Companies />
             </Route>
             <Route exact path="/companies/:companyid">
-            <Companies />
+              <Companies />
             </Route>
             <Route exact path="/login">
               <Login />
