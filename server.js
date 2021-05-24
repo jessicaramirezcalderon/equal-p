@@ -28,9 +28,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Serve up static assets (usually on heroku)
-//if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") {
+  console.info('Using static assets on prod');
   app.use(express.static("client/build"));
-//}
+}
 // Add routes, both API and view
 app.use(routes);
 
@@ -44,4 +45,5 @@ mongoose.connection.once('open', () => console.info('Successfully connected to t
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+  console.log(`Environment variables are: ${JSON.stringify(process.env)}`);
 });

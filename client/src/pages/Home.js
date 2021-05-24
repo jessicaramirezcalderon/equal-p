@@ -9,11 +9,7 @@ function Home() {
       <Container fluid>
         <Row>
           <Col size="md-6">
-            <Jumbotron>
               <h1>Welcome</h1>
-            </Jumbotron>
-
-         
           </Col>
 
         </Row>
