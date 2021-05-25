@@ -4,6 +4,8 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 //Components
 
+//THIS IS MY RESULTS FRONT END POINT
+
 // import Jumbotron from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
@@ -54,7 +56,11 @@ function ResultsList() {
                     <DeleteBtn onClick={() => deleteCompany(company._id)} />
                   </ListItem>
                 ))}
+                {/* <div style={{ margin: "20px", textAlign: "right" }}>
+                  <button type="button" className="btn btn-success">Continue</button>
+                </div> */}
               </List>
+              
             ) : (
               <h3>No Results to Display</h3>
             )}

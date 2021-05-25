@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import UserContext from "./utils/UserContext";
 import Nav from "./components/Nav";
-import HomeC from "./components/Home";
+// import HomeC from "./components/Home";
 //Pages
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
@@ -21,7 +21,6 @@ function App() {
       <UserContext.Provider value={{ email, setEmail, loggedIn, setLoggedIn }}>
         <div>
           <Nav />
-          <HomeC />
           <Switch>
             <Route exact path="/">
               <Home />

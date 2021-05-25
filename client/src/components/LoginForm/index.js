@@ -26,7 +26,7 @@ function LoginForm(props) {
                 // console.log(data);
                 setEmail(data.data.email);
                 setLoggedIn(true);
-                history.push("/");
+                history.push("/");//add route to the page that i want
             })
             .catch(err => {
                 console.log(err);

@@ -4,21 +4,24 @@ import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 
 function Home() {
-  
-    return (
-      <Container fluid>
-        <Row>
-          <Col size="md-6">
-        
-              <h1>Welcome</h1>
-              <h3>Rethinking company culture since the beginning of time</h3>
-         
-          </Col>
 
-        </Row>
-      </Container>
-    );
-  }
+  return (
+    <Container fluid>
+      <Row>
+        <Col size="md-6">
+
+          <div style={{ margin: "20px"}}>
+            <h5 style={{ margin: "30px"}}>Rethinking company culture since the beginning of time</h5>
+            <button type="button" className="btn btn-success">Get Started</button>
+          </div>
+
+
+        </Col>
+
+      </Row>
+    </Container>
+  );
+}
 
 
 export default Home;

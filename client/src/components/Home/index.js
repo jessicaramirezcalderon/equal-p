@@ -4,6 +4,8 @@ import UserContext from "../../utils/UserContext";
 import LoginForm from "../LoginForm";
 import './style.scss';
 
+//LOGIN COMPONENT
+
 function Home() {
   const [loginExpanded, setLoginExpanded] = useState(false);
   const { email, loggedIn } = useContext(UserContext);
