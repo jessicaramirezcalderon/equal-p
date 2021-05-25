@@ -37,6 +37,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI);
+mongoose.set('useCreateIndex', true);
 
 //console log db connection for debugging
 mongoose.connection.on('error', (e) => console.error(`connection error: ${e.message}`));
@@ -45,5 +46,5 @@ mongoose.connection.once('open', () => console.info('Successfully connected to t
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-  console.log(`Environment variables are: ${JSON.stringify(process.env)}`);
+  // console.log(`Environment variables are: ${JSON.stringify(process.env)}`);
 });

@@ -11,8 +11,7 @@ import DeleteBtn from "../components/DeleteBtn";
 
 
 function ResultsList() {
-  // Setting our component's initial state
-  // const [results, setResults] = useState([])
+
   const [companies, setCompanies] = useState([])
 
 
@@ -42,12 +41,12 @@ function ResultsList() {
       <Container fluid>
         <Row>
           <Col size="md-6 sm-12">
-    
+          <h5 style={{ textAlign: "center", marginBottom: "40px" }}>Please select your company from the list below</h5>
             {companies.length ? (
               <List>
                 {companies.map(company => (
                   <ListItem key={company._id}>
-                    <Link to={"/company/" + company._id}>
+                    <Link className="text-secondary" style={{ textDecoration: "none" }}  to={"/company/" + company._id}>
                       <strong>
                         {company.title}
                       </strong>
