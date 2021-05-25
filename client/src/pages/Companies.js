@@ -3,12 +3,12 @@ import API from "../utils/API";
 
 import finnAPI from "../utils/finnhubAPI";
 
-// import { Link } from "react-router-dom";
 //Components
 
-import Jumbotron from "../components/Jumbotron";
+// import Jumbotron from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn } from "../components/Form";
+
 
 
 function Companies() {
@@ -31,12 +31,6 @@ function Companies() {
       .catch(err => console.log(err));
   };
 
-  // Deletes a companies from the database with a given id, then reloads companies from the db
-  // function deleteCompany(id) {
-  //   API.deleteCompany(id)
-  //     .then(res => loadCompanies())
-  //     .catch(err => console.log(err));
-  // }
 
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
@@ -61,46 +55,21 @@ function Companies() {
       <Container fluid>
         <Row>
           <Col size="md-6">
-            <Jumbotron>
-              <h1>Company Results</h1>
-            </Jumbotron>
-
-            <form>
+            <form style={{ marginTop: 100 }} >
             <Input
               onChange={(e) => handleInputChange(e)}
               name="search"
-              placeholder="Search Company"
+              placeholder="Please enter a company name"
             />
             <FormBtn
               disabled={!(formObject.search)}
               onClick={(e) => handleFormSubmit(e)}
             >
-              Search Company
+              Search
               </FormBtn>
           </form>
          
           </Col>
-
-          {/* <Col size="md-6 sm-12">
-    
-            {companies.length ? (
-              <List>
-                {companies.map(company => (
-                  <ListItem key={company._id}>
-                    <Link to={"/company/" + company._id}>
-                      <strong>
-                        {company.title}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => deleteCompany(company._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-          </Col> */}
-
         </Row>
       </Container>
     );

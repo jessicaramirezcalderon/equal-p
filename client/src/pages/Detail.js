@@ -1,50 +1,70 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
+import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 
-function Detail(props) {
-  const [book, setBook] = useState({})
+import { Link } from "react-router-dom";
+//Components
 
-  // When this component mounts, grab the book with the _id of props.match.params.id
-  // e.g. localhost:3000/books/599dcb67f0f16317844583fc
-  const {bookid} = useParams() // think useContext
+// import Jumbotron from "../components/Jumbotron";
+import { Col, Row, Container } from "../components/Grid";
+import { List, ListItem } from "../components/List";
+import DeleteBtn from "../components/DeleteBtn";
+
+
+function ResultsList() {
+  // Setting our component's initial state
+  // const [results, setResults] = useState([])
+  const [companies, setCompanies] = useState([])
+
+
+  // Load all companies and store them with setCompany
   useEffect(() => {
-    API.getBook(bookid)
-      .then(res => setBook(res.data))
-      .catch(err => console.log(err));
-  }, [bookid])
+    loadCompanies()
+  });
 
-  return (
+  // Loads all companies and sets them to companies
+  function loadCompanies() {
+    API.getCompanies()
+      .then(res => 
+        setCompanies(res.data)
+      )
+      .catch(err => console.log(err));
+  };
+
+  // Deletes a companies from the database with a given id, then reloads companies from the db
+  function deleteCompany(id) {
+    API.deleteCompany(id)
+      .then(res => loadCompanies())
+      .catch(err => console.log(err));
+  }
+  
+
+    return (
       <Container fluid>
         <Row>
-          <Col size="md-12">
-            <Jumbotron>
-              <h1>
-                {book.title} by {book.author}
-              </h1>
-            </Jumbotron>
+          <Col size="md-6 sm-12">
+    
+            {companies.length ? (
+              <List>
+                {companies.map(company => (
+                  <ListItem key={company._id}>
+                    <Link to={"/company/" + company._id}>
+                      <strong>
+                        {company.title}
+                      </strong>
+                    </Link>
+                    <DeleteBtn onClick={() => deleteCompany(company._id)} />
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
           </Col>
-        </Row>
-        <Row>
-          <Col size="md-10 md-offset-1">
-            <article>
-              <h1>Synopsis</h1>
-              <p>
-                {book.synopsis}
-              </p>
-            </article>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-2">
-            <Link to="/">← Back to Authors</Link>
-          </Col>
+
         </Row>
       </Container>
     );
   }
 
 
-export default Detail;
+export default ResultsList;
