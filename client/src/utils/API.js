@@ -15,15 +15,15 @@ export default {
     return axios.post(`${process.env.REACT_APP_API_URL}/api/users/signup`, userData);
   },
   getUser: function () {
-    return axios.get(`${process.env.REACT_APP_API_URL}/api/users/data`);
+    return axios.get(`${process.env.REACT_APP_API_URL}/api/users/data`);//works
   },
 
   // Gets all companies
   getCompanies: function () {
-    return axios.get(`${process.env.REACT_APP_API_URL}/api/companies`);
+    return axios.get(`${process.env.REACT_APP_API_URL}/api/companies`);//works
   },
   getRatings: function () {
-    return axios.get(`${process.env.REACT_APP_API_URL}/api/reviews`);
+    return axios.get(`${process.env.REACT_APP_API_URL}/api/reviews`);//works
   },
   saveRating: function (ratingData) {
     return axios.post(`${process.env.REACT_APP_API_URL}/api/reviews`, ratingData);
