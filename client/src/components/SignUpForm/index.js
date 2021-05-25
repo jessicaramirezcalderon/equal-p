@@ -50,7 +50,7 @@ function SignUpForm(props) {
                             <label htmlFor={passwordId}>Password</label>
                             <input ref={passwordInput} type="password" className="form-control" id={passwordId} />
                         </div>
-                        <button type="submit" className="btn btn-primary">Sign Up</button>
+                        <button type="submit" className="btn btn-success" style={{ marginTop: "20px"}}>Sign Up</button>
                     </form>
                     );
                 }

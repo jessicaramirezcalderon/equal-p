@@ -26,7 +26,7 @@ function LoginForm(props) {
                 // console.log(data);
                 setEmail(data.data.email);
                 setLoggedIn(true);
-                history.push("/");//add route to the page that i want
+                history.push("/companies");
             })
             .catch(err => {
                 console.log(err);
@@ -46,7 +46,8 @@ function LoginForm(props) {
                             <label htmlFor={passwordId}>Password</label>
                             <input ref={passwordInput} type="password" className="form-control" id={passwordId} />
                         </div>
-                        <button type="submit" className="btn btn-primary">Login</button>
+                        <button type="submit" className="btn btn-success" style={{ marginRight: "20px"}}>Login</button>
+                        <button type="button" className="btn btn-warning" style={{ margin: "20px", textDecoration: "none", color: "white"}}><a style={{ textDecoration: "none", color: "white"}} href="/signup">Or Sign Up Here</a></button>
                     </form>
                     );
                 }
