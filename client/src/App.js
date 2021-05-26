@@ -5,7 +5,7 @@ import Nav from "./components/Nav";
 // import HomeC from "./components/Home";
 //Pages
 import Home from "./pages/Home";
-import Detail from "./pages/Detail";
+import MainForm from "./pages/MainForm";
 import Companies from "./pages/Companies";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
@@ -31,8 +31,8 @@ function App() {
             <Route exact path="/companies/:companyid">
               <Companies />
             </Route>
-            <Route exact path="/results">
-              <Detail />
+            <Route exact path="/yourinfo">
+              <MainForm />
             </Route>
             <Route exact path="/login">
               <Login />

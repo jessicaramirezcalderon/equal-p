@@ -3,11 +3,13 @@ import React from "react";
 // import Jumbotron from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
 
+import "./home.scss";
+
 function Home() {
 
   return (
     <Container fluid>
-      <Row>
+      <Row classes="getStarted">
         <Col size="md-6">
 
           <div style={{ margin: "20px"}}>
