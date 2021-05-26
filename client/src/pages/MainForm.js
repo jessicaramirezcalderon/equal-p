@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import { Input, TextArea, FormBtn } from "../components/MainForm";
+import { Input, TextArea, FormBtn } from "../components/Form";
 
 function MainForm() {
   // Setting our component's initial state
@@ -20,7 +20,7 @@ function MainForm() {
   // Then reload books from the database
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (formObject.title && formObject.author) {
+    if (formObject.gender && formObject.author) {
         // .then(res => loadBooks())
         // .catch(err => console.log(err));
     }
@@ -33,8 +33,10 @@ function MainForm() {
             <form>
               <Input
                 onChange={handleInputChange}
-                name="title"
-                placeholder="Title (required)"
+                name="gender"
+                type="radio"
+                id="male"
+                placeholder="What is your gender (required)"
               />
               <Input
                 onChange={handleInputChange}
@@ -47,7 +49,7 @@ function MainForm() {
                 placeholder="Synopsis (Optional)"
               />
               <FormBtn
-                disabled={!(formObject.author && formObject.title)}
+                disabled={!(formObject.author && formObject.gender)}
                 onClick={handleFormSubmit}
               >
                 Submit
