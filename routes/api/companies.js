@@ -14,6 +14,10 @@ router
   .delete(companyController.remove);
 
 router
+  .route('/:id/results')
+  .get(companyController.getCompanyResults);
+
+router
   .route('/:id/submission')
   .post(companyController.handleUserSubmission);
 

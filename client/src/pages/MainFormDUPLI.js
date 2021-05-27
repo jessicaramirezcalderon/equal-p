@@ -13,7 +13,7 @@ function MainForm2() {
 
   // // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
-    const { name, value } = event.target;
+    let { name, value } = event.target;
     setFormObject({ ...formObject, [name]: value });
   };
 
@@ -21,14 +21,15 @@ function MainForm2() {
   // // Then reload books from the database
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (formObject.gender && formObject.experience_level && formObject.salary_range) {
+    if (formObject.gender && formObject.experienceLevel && formObject.salary) {
+      formObject.company = symbol;
       return API.submitUserInfo(formObject, symbol)
         .then(res => setShowResults(true)) //pass this to to the next route which will be the results route
         .catch(err => console.log(err));
     }
   };
 
-  return (showResults ? <Redirect to="/results" /> : (
+  return (showResults ? <Redirect to={"/results/" + symbol} /> : (
     <Container fluid>
       <Row>
         <Col size="md-6">
@@ -36,12 +37,12 @@ function MainForm2() {
             <Form.Group>
               <Form.Label>What is your gender?</Form.Label>
               <br />
-              <Form.Check inline label="Female" name="gender" type="radio" onChange={handleInputChange} />
-              <Form.Check inline label="Male" name="gender" type="radio" onChange={handleInputChange} />
+              <Form.Check inline label="Female" name="gender" type="radio" value="Female" onChange={handleInputChange} />
+              <Form.Check inline label="Male" name="gender" type="radio" value="Male" onChange={handleInputChange} />
             </ Form.Group>
             <Form.Group>
               <Form.Label>What is your experience level?</Form.Label>
-              <Form.Control name="experience_level" as="select" onChange={handleInputChange}>
+              <Form.Control name="experienceLevel" as="select" onChange={handleInputChange}>
                 <option>Select level</option>
                 <option>Entry Level</option>
                 <option>Mid Level</option>
@@ -49,15 +50,10 @@ function MainForm2() {
               </Form.Control>
 
               <Form.Label>What is your salary range?</Form.Label>
-              <Form.Control name="salary_range" as="select" onChange={handleInputChange}>
-                <option>Select range</option>
-                <option>$40,000 - $60,000</option>
-                <option>$60,000 - $90,000</option>
-                <option>$90,000 - $150,000</option>
-              </Form.Control>
+              <Form.Control size="sm" type="number" name="salary" placeholder="Enter your salary" onChange={handleInputChange} />
             </Form.Group>
             <FormBtn
-              disabled={!(formObject.gender && formObject.experience_level && formObject.salary_range)}
+              disabled={!(formObject.gender && formObject.experienceLevel && formObject.salary)}
               onClick={handleFormSubmit}
             >
               Submit

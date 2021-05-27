@@ -13,6 +13,7 @@ import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Logout from "./pages/Logout";
+import Results from './pages/Results';
 
 
 function App() {
@@ -34,9 +35,7 @@ function App() {
             <Route exact path="/yourinfo">
               <MainForm />
             </Route>
-            <Route exact path="/testform">
-              <MainForm2 />
-            </Route>
+            <Route path="/results/:symbol" children={<Results />} />
             <Route exact path="/login">
               <Login />
             </Route>
