@@ -7,8 +7,8 @@ function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-primary">
       <div className="nav-wrapper">
-        {/* <h1><a className="navbar-brand text-light" href="/">Equal Pay App</a></h1> */}
-        <img src="./logo.png"/>
+        <h1><a className="navbar-brand text-light" href="/">Equal Pay App</a></h1>
+        {/* <img src="./logo.png"/> */}
 
       </div>
     </nav>
