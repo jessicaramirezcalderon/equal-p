@@ -1,6 +1,6 @@
 # Equal Pay App
 
-The purpose of this app is to collect salary data for various experience levels to determine whetehr or not the company is adhering to equal pay laws. 
+The purpose of this app is to collect salary data for various experience levels to determine whether or not the company is adhering to equal pay laws. 
 
 ## Technologies
 
