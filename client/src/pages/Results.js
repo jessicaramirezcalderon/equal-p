@@ -22,7 +22,7 @@ function Results() {
                 setResults(res.data)
             )
             .catch(err => console.log(err));
-            console.log('this is my company' + symbol)
+        console.log('this is my company' + symbol)
     }
 
     function loadCompany() {
@@ -37,15 +37,15 @@ function Results() {
         <Container fluid>
             <Row>
                 <Col size="md-6">
-                  
-                    <h2>{results.avgFemaleEntryLevel}</h2>
-                    <h2>{results.avgFemaleMidLevel}</h2>
-                    <h2>{results.avgFemaleSeniorLevel}</h2>
-                    <h2>{results.avgMaleEntryLevel}</h2>
-                    <h2>{results.avgMaleMidLevel}</h2>
-                    <h2>{results.avgMaleSeniorLevel}</h2>
-                    
-                    {companyName}
+                    <div style={{ padding: 40, marginTop: 40}}>
+                        <h2 style={{ backgroundColor: "yellow"}}>{companyName}</h2>
+                        <h2>Female Entry Level: ${results.avgFemaleEntryLevel}</h2>
+                        <h2>Female Mid Level: ${results.avgFemaleMidLevel}</h2>
+                        <h2>Female Senior Level: ${results.avgFemaleSeniorLevel}</h2>
+                        <h2>Male Entry Level: ${results.avgMaleEntryLevel}</h2>
+                        <h2>Male Mid Level: ${results.avgMaleMidLevel}</h2>
+                        <h2>Male Senior Level: ${results.avgMaleSeniorLevel}</h2>
+                    </div>
                 </Col>
             </Row>
         </Container>
