@@ -33,21 +33,23 @@ function MainForm() {
             <form>
               <Input
                 onChange={handleInputChange}
-                name="gender"
+                name="male"
                 type="radio"
-                id="male"
-                placeholder="What is your gender (required)"
+                id="maleradio"
+                placeholder="Male"
               />
               <Input
                 onChange={handleInputChange}
-                name="author"
-                placeholder="Author (required)"
+                name="female"
+                type="radio"
+                id="femaleradio"
+                placeholder="Female"
               />
-              <TextArea
+              {/* <TextArea
                 onChange={handleInputChange}
                 name="synopsis"
                 placeholder="Synopsis (Optional)"
-              />
+              /> */}
               <FormBtn
                 disabled={!(formObject.author && formObject.gender)}
                 onClick={handleFormSubmit}

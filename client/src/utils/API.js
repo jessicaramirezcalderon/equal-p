@@ -28,6 +28,9 @@ export default {
   saveRating: function (ratingData) {
     return axios.post(`${process.env.REACT_APP_API_URL}/api/reviews`, ratingData);
   },
+  submitUserInfo: function (userInfo, companySymbol) {
+    return axios.post(`${process.env.REACT_APP_API_URL}/api/company/${companySymbol}/submission`, userInfo);
+  },
   // Gets the company with the given id
   getCompanyProfile: function (id) {
     return axios.get(`${process.env.REACT_APP_API_URL}/api/companies/` + id);

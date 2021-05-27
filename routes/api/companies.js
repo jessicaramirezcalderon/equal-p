@@ -13,4 +13,8 @@ router
   .put(companyController.update)
   .delete(companyController.remove);
 
+router
+  .route('/:id/submission')
+  .post(companyController.handleUserSubmission);
+
 module.exports = router;

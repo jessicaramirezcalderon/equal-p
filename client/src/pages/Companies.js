@@ -1,26 +1,16 @@
-import React, { useState, useEffect } from "react";
-import API from "../utils/API";
-
+import React, { useState } from "react";
 import finnAPI from "../utils/finnhubAPI";
-
 import { List, ListItem } from "../components/List";
 import { Link } from "react-router-dom";
-
-// import DeleteBtn from "../components/DeleteBtn";
-
-//Components
-
-// import Jumbotron from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn } from "../components/Form";
-
-
 
 function Companies() {
   // Setting our component's initial state
   // const [results, setResults] = useState([])
   const [companies, setCompanies] = useState([])
   const [formObject, setFormObject] = useState({})
+
 
   // Load all companies and store them with setCompany
   // useEffect(() => {
@@ -58,8 +48,6 @@ function Companies() {
         .catch(err => console.log(err))
     }
   };
-
-
 
   return (
     <Container fluid>

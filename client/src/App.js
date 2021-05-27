@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import UserContext from "./utils/UserContext";
 import Nav from "./components/Nav";
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import HomeC from "./components/Home";
 //Pages
 import Home from "./pages/Home";
 import MainForm from "./pages/MainForm";
+import MainForm2 from "./pages/MainFormDUPLI";
 import Companies from "./pages/Companies";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
@@ -28,11 +30,12 @@ function App() {
             <Route exact path="/companies">
               <Companies />
             </Route>
-            <Route exact path="/companies/:companyid">
-              <Companies />
-            </Route>
+            <Route path="/company/:symbol" children={<MainForm2 />} />
             <Route exact path="/yourinfo">
               <MainForm />
+            </Route>
+            <Route exact path="/testform">
+              <MainForm2 />
             </Route>
             <Route exact path="/login">
               <Login />

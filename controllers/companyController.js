@@ -21,6 +21,11 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  handleUserSubmission: function(req, res) {
+    db.SalaryReport
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+  },
   update: function(req, res) {
     db.Company
       .findOneAndUpdate({ _id: req.params.id }, req.body)
