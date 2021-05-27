@@ -49,7 +49,7 @@ function MainForm2() {
                 <option>Senior Level</option>
               </Form.Control>
 
-              <Form.Label>What is your salary range?</Form.Label>
+              <Form.Label>What is your salary?</Form.Label>
               <Form.Control size="sm" type="number" name="salary" placeholder="Enter your salary" onChange={handleInputChange} />
             </Form.Group>
             <FormBtn
