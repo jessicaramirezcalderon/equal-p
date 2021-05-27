@@ -3,7 +3,7 @@ import API from "../utils/API";
 import finnAPI from "../utils/finnhubAPI";
 import { useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
+
 
 function Results() {
     const { symbol } = useParams();

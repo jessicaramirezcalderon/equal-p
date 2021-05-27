@@ -32,9 +32,9 @@ function App() {
               <Companies />
             </Route>
             <Route path="/company/:symbol" children={<MainForm2 />} />
-            <Route exact path="/yourinfo">
+            {/* <Route exact path="/yourinfo">
               <MainForm />
-            </Route>
+            </Route> */}
             <Route path="/results/:symbol" children={<Results />} />
             <Route exact path="/login">
               <Login />
